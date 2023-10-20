@@ -12,3 +12,25 @@ function addRandom(num1) {
 }
 
 console.log(addRandom(5));
+
+let prevResult = 0;
+
+function addMoreNumbers(num1, num2) {
+    const sum = num1 + num2;
+    prevResult = sum;
+    return sum;
+}
+
+console.log(addMoreNumbers(1,5));
+
+const hobbies = ['Sports', 'Cooking'];
+function printHobbies(h) {
+    h.push('NEW HOBBY');
+    console.log(h);
+}
+
+printHobbies(hobbies);
+
+
+// Factory functions - a function that produces another function
+
