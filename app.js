@@ -43,7 +43,7 @@ function createTaxCalculator(tax) {
 }
 
 const calculateVatAmount = createTaxCalculator(0.19);
-const calculateIncomeTaxAmount = createTaxCalculator(0.25);
+// const calculateIncomeTaxAmount = createTaxCalculator(0.25);
 
 multiplier = 1.2;
 
@@ -52,5 +52,13 @@ console.log(calculateVatAmount(200));
 
 
 
-const vatAmount = calculateTax(100, 0.19);
-const incomeTax = calculateTax(100, .20);
+let userName = 'Michael';
+function greetUser() {
+   let name = 'Anna';
+    console.log('Hi ' + name);
+}
+
+let name = 'Fred';
+userName = 'Patsy';
+
+greetUser();
