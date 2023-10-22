@@ -1,4 +1,4 @@
-//Pure function because we can prdict the outcome
+//Pure function because we can predict the outcome
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -83,3 +83,60 @@ function powerOf(x, n) {
 }
 
 console.log(powerOf(2,3));
+
+const myself = {
+    name: 'Michael',
+    friends: [
+        {
+            name: 'Jay',
+            friends: [
+                {
+                name: 'Melanie',
+                friends: [
+                        {
+                            name:'Joe'
+                        },
+                        {
+                            name:'Michelle'
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'John'
+        }
+    ]
+};
+
+// No recursion
+//
+// function printFriendNames(person) {
+//     const collectedNames = [];
+//     for (const friend of person.friends) {
+//         collectedNames.push(friend.name);
+//     }
+//
+//     return collectedNames;
+// }
+
+// With recursion
+
+function getFriendNames(person) {
+    const collectedNames = [];
+
+    if (!person.friends) {
+        return [];
+    }
+
+    for (const friend of person.friends) {
+        collectedNames.push(friend.name);
+        collectedNames.push(...getFriendNames(friend));
+    }
+
+    return collectedNames;
+}
+
+
+
+console.log(getFriendNames(myself));
